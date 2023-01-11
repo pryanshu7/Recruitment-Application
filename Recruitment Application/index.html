@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--translate="no"-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KPMG</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.6.0/dist/tf.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection"></script>
+    
+    <!-- Load BodyPix -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=
+    Open+Sans:ital,wght@0,300;0,400;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="rec/style.css">
+    <link rel="stylesheet" href="rec/general.css">
+
+</head>
+<body >
+
+
+<main>
+
+
+    <section class="card-container" id="card-1">
+
+            <h2 class="header-all">Internship Demo: Visual Illustration</h2>
+
+            <div  id="opening" class="inner-card full-inner-card" >
+                <p >
+                    This is visual illustration, and walk through using examples and interactive elements.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    <section class="card-container hide" id="card-2">
+        <h2 class="header-all">Situation 1: Language Exams</h2>
+
+        <div class="inner-card full-inner-card translation-card">
+            <p>Hallo! mein Name ist Claire. ich bin 12 Jahre alt.
+                Ich bin Student und ich mag meine Schule</p>
+
+            <div >
+                <p>Wie alt ist Claire?</p><br>
+                <input type="radio" id="1" name="drone" value="hieß" checked><label for="1">a) Claire ist 13 Jahre alt</label>
+                <br>
+                <input type="radio" id="2" name="drone" value="hießt"><label for="2">b) Claire ist 19 Jahre alt</label>
+                <br>
+                <input type="radio" id="3" name="drone" value="hießen"><label for="3">c) Claire ist 31 Jahre alt</label>
+            </div>
+
+            <div>
+                <button class="btn-general" id="disable-translation-btn">Translation is ON</button>
+                <button class="hide btn-general" id="enable-translation-btn">Translation is OFF</button>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <section class="card-container hide" id="card-3">
+        <h2 class="header-all">Situation 2: Text Operation</h2>
+
+        <div class="inner-card full-inner-card translation-card">
+            <p id="text-copy" class="no_copy">Calculate the total area of a triangle, whose base is 3cm and height 6cm?</p>
+
+            <textarea class="inner-card" placeholder="Try to copy and past it here"></textarea>
+
+
+            <div>
+                <button class="btn-general" id="btn-copy-on" >ON</button>
+                <button class="hide btn-general" id="btn-copy-off" >OFF</button>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <section class="card-container hide" id="card-44">
+
+        <h2 class="header-all">Situation 2: Text Operation</h2>
+
+        <div  class="inner-card left-card" >
+            <ul class="no_copy" id="no_copy">
+                <h2>Preventing some simple operation:</h2>
+
+                <li>Dieser Ort in meinem Kopf, ein Ort, den ich gerne verstecke.
+
+                    Du kennst die Chancen nicht, was ist, wenn ich sterben sollte?
+                </li>
+                <li>Cut text.</li>
+                <li>Drag text.</li>
+                <li>Translate text using Google Translate.</li>
+
+            </ul>
+
+        </div>
+
+        <textarea class="inner-card right-card" placeholder="Try to copy and past it here"></textarea>
+
+    </section>
+
+    <section class="card-container hide" id="card-4">
+        <h2 class="header-all">Other Operations</h2>
+
+        <div  class="inner-card left-card" >
+            <ul>
+                <li>Preventing image download.</li>
+                <li>Prevent Printing or saving as PDF.</li>
+            </ul>
+        </div>
+
+        <img id="img--" class="inner-card right-card right-click-block" src="rec/img.png" alt="img test">
+
+    </section>
+
+    <section class="card-container hide" id="card-5">
+        <h2 class="header-all">Detecting your movements</h2>
+
+        <div  class="inner-card left-card" >
+            <p id="window-size-par"></p>
+            <ul>
+                <li>
+                    First try to reduce the size of the window, then move the mouse out
+                </li>
+                <li>
+                    Second try to change the tab.
+                </li>
+                <li>
+                    Then try to minimize the window.
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="inner-card right-card output">
+            <p id="output"></p>
+        </div>
+
+
+    </section>
+
+    <section class="card-container hide" id="card-6">
+        <h2 class="header-all">Focus Tracking</h2>
+
+<!--        <canvas id="canvas-bodypix" class="inner-card left-card"></canvas>-->
+
+        <div id="video-div">
+            <video class="left-card inner-card"  id="vid-bodypix" autoplay playsinline></video>
+
+            <div id="div-op" class="right-card inner-card">
+                <p id="op1">Output</p>
+                <p id="op2">Output</p>
+            </div>
+
+
+
+        </div>
+
+
+
+    </section>
+
+
+    <div>
+        <button class="btn-control btn-general" id="back-btn">Back</button>
+        <button class="btn-control btn-general" id="next-btn">Next</button>
+        <button id="btn-start" class="btn-general hide">start</button>
+
+    </div>
+
+</main>
+
+</body>
+<script src="slides.js"></script>
+<script src="main.js" ></script>
+<script src="collection.js" ></script>
+<script src="rec/data.js" defer></script>
+<script src="bodypix.js" defer></script>
+<script src="faceTracking.js" defer></script>
+</html>
